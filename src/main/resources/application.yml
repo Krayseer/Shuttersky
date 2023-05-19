@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shuttersky
+    username: postgres
+    password: postgres
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbit
+    password: rabbit
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
