@@ -21,7 +21,7 @@ public class PhotoController {
     }
 
     @PostMapping
-    public ResponseEntity<String> upload(@RequestParam("photo") MultipartFile file) throws IOException {
+    public ResponseEntity<String> upload(@RequestParam("photo") MultipartFile file) {
         return ResponseEntity.ok(photoService.uploadPhoto(file));
     }
 

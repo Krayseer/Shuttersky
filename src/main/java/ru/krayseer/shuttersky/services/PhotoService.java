@@ -33,7 +33,6 @@ public class PhotoService {
     }
 
     public String uploadPhoto(MultipartFile multipartFile) {
-        System.out.println("Изменения");
         if(multipartFile.isEmpty()) {
             throw new RuntimeException("Выберите файл");
         }
@@ -45,7 +44,7 @@ public class PhotoService {
                     .uuid(uuid)
                     .data(multipartFile.getBytes())
                     .build());
-            rabbitService.send("Фотография успешно загружена");
+            rabbitService.send(uuid);
         } catch (IOException e) {
             throw new RuntimeException("Ошибка загрузки файла");
         }
